@@ -74,17 +74,18 @@
             "type": "boolean",
             "required": true,
             "default": true,
-            "title": "Mostrar comentarios",
+            "title": "Mostrar realimentación",
             "inputType": "Checkbox",
-            "validators": []
+            "validators": [],
+            "help": "Muestra una realimentación dependiendo de la respuesta del estudiante."
         },
         "_canShowMarking": {
             "type": "boolean",
             "default": true,
-            "title": "Mostrar marcado",
+            "title": "Mostrar respuestas seleccionadas",
             "inputType": "Checkbox",
             "validators": [],
-            "help": "Muestra marcas al completar una pregunta."
+            "help": "Muestra respuestas seleccionadas al completar una pregunta."
         },
         "_shouldResetAllAnswers": {
             "type": "boolean",
@@ -108,9 +109,10 @@
             "type": "boolean",
             "required": false,
             "default": false,
-            "title": "Aleatorizar respuestas",
+            "title": "Ordenar respuestas de manera aleatoria",
             "inputType": "Checkbox",
-            "validators": []
+            "validators": [],
+            "help": "Corresponde al orden de las respuestas"
         },
         "_questionWeight": {
             "type": "number",
@@ -119,7 +121,7 @@
             "title": "Peso de la pregunta",
             "inputType": "Number",
             "validators": ["number"],
-            "help": "Cuanto vale esta pregunta"
+            "help": "Seleccionar el peso que tendrá esta pregunta."
         },
         "_recordInteraction": {
             "type": "boolean",
@@ -161,7 +163,7 @@
         "_items": {
             "type": "array",
             "required": true,
-            "title": "Elementos en juego",
+            "title": "Opciones de respuesta",
             "items": {
                 "type": "object",
                 "required": true,
@@ -170,7 +172,7 @@
                         "type": "string",
                         "required": true,
                         "default": "",
-                        "title": "Título de coincidencias",
+                        "title": "Texto",
                         "inputType": "Text",
                         "validators": ["required"],
                         "help": "Texto del título que se muestra encima de la opción de coincidencia",
@@ -179,7 +181,7 @@
                     "_options": {
                         "type": "array",
                         "required": true,
-                        "title": "Opciones de coincidencia",
+                        "title": "Opciones de respuesta",
                         "items": {
                             "type": "object",
                             "required": true,
@@ -221,13 +223,13 @@
         "_feedback": {
             "type": "object",
             "required": false,
-            "title": "Comentarios",
+            "title": "Realimentación",
             "properties": {
                 "title": {
                     "type": "string",
                     "required": false,
                     "default": "",
-                    "title": "Título del comentario",
+                    "title": "Título de la realimentación",
                     "inputType": "Text",
                     "validators": [],
                     "help": "Déjelo en blanco para que en su lugar se muestre el título del componente.",
@@ -240,13 +242,13 @@
                     "title": "Correcto",
                     "inputType": "TextArea",
                     "validators": [],
-                    "help": "Comentarios de respuesta correcta para esta pregunta",
+                    "help": "Realimentación de respuesta correcta para esta pregunta",
                     "translatable": true
                 },
                 "_incorrect": {
                     "type": "object",
                     "required": false,
-                    "title": "Comentarios incorrectos",
+                    "title": "Realimentación en caso de incorrecto",
                     "properties": {
                         "final": {
                             "type": "string",
@@ -255,7 +257,7 @@
                             "title": "Final incorrecta",
                             "inputType": "TextArea",
                             "validators": [],
-                            "help": "Comentarios de respuesta incorrecta para el intento final",
+                            "help": "Realimentación de respuesta incorrecta para el intento final",
                             "translatable": true
                         },
                         "notFinal": {
@@ -265,7 +267,7 @@
                             "title": "No final incorrecto ",
                             "inputType": "TextArea",
                             "validators": [],
-                            "help": "Comentarios de respuesta incorrecta para cualquier intento excepto el último intento. Si deja esto en blanco, se usará la retroalimentación 'Final incorrecta' en su lugar.",
+                            "help": "Realimentación de respuesta incorrecta para cualquier intento excepto el último intento. Si deja esto en blanco, se usará la retroalimentación 'Final incorrecta' en su lugar.",
                             "translatable": true
                         }
                     }
@@ -291,7 +293,7 @@
                             "title": "No final parcialmente correcto",
                             "inputType": "TextArea",
                             "validators": [],
-                            "help": "Comentarios de respuesta parcialmente correctos para cualquier intento excepto el último intento. Si deja esto en blanco, se usará la retroalimentación 'Final Parcialmente Correcto' en su lugar.",
+                            "help": "Realimentación de respuesta parcialmente correctos para cualquier intento excepto el último intento. Si deja esto en blanco, se usará la retroalimentación 'Final Parcialmente Correcto' en su lugar.",
                             "translatable": true
                         }
                     }
@@ -409,7 +411,7 @@
                 },
                 "_showFeedback": {
                     "type": "object",
-                    "title": "Mostrar comentarios",
+                    "title": "Mostrar realimentación",
                     "properties": {
                         "buttonText": {
                             "type": "string",
@@ -418,7 +420,7 @@
                             "title": "Texto del botón",
                             "inputType": "QuestionButton",
                             "validators": [],
-                            "help": "Texto de la etiqueta del botón para mostrar comentarios",
+                            "help": "Texto de la etiqueta del botón para mostrar realimentación.",
                             "translatable": true
                         },
                         "ariaLabel": {
@@ -428,7 +430,7 @@
                             "title": "Etiqueta Aria",
                             "inputType": "QuestionButton",
                             "validators": [],
-                            "help": "Etiqueta de Aria para el botón Mostrar comentarios",
+                            "help": "Etiqueta de Aria para el botón Mostrar realimentación.",
                             "translatable": true
                         }
                     }
