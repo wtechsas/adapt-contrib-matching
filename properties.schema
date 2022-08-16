@@ -338,7 +338,7 @@
                         "buttonText": {
                             "type": "string",
                             "required": false,
-                            "default": "",
+                            "default": "Reintentar",
                             "title": "Texto del botón",
                             "inputType": "QuestionButton",
                             "validators": [],
